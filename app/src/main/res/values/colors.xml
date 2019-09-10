@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#3F51B5</color>
+	<color name="colorPrimaryDark">#303F9F</color>
+	<color name="colorAccent">#FF4081</color>
+
+
+	<color name="colorRed">#ff1a1a</color>
+	<color name="colorGreen">#80cc33</color>
+	<color name="colorBlue">#1085EF</color>
+	<color name="colorYellow">#ffcc00</color>
+	<color name="colorWhite">#ffffff</color>
+	<color name="colorGray">#e0e0e0</color>
+	<color name="colorOrange">#FF6B23</color>
+	<color name="colorTitle">#071521</color>
+	<color name="colorGrayInfo">#C3CDD4</color>
+	<color name="colorLine">#D8D8D8</color>
+	<color name="colorBlack">#000000</color>
+	<color name="colorDialogGray">#8D9198</color>
+	<color name="colorProgress">#2A2A2A</color>
+	<color name="colorVersionGray">#93999E</color>
+	<color name="colorDetailsLine">#F4F5F6</color>
+	<color name="colorManagerBlue">#1B8AEF</color>
+	<color name="colorItemGray">#9A9FA4</color>
+	<color name="colorItemLine">#B3B3B3</color>
+	<color name="colorItemLineTwo">#F4F4F4</color>
+	<color name="colorSetBlack">#020C15</color>
+	<color name="colorSetGray">#90969B</color>
+	<color name="colorAboutBlack">#172129</color>
+	<color name="colorAboutGray">#5C6269</color>
+	<color name="colorNetBlack">#4D555B</color>
+</resources>

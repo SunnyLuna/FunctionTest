@@ -1,0 +1,29 @@
+ext {
+    android = [
+            compileSdkVersion: 28,
+            minSdkVersion    : 21,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0.1",
+    ]
+
+    dependencies = [
+            junitVersion       : "junit:junit:4.12",
+            dataBindingVersion : 'com.android.databinding:compiler:3.0.0',
+            retrofitVersion    : 'com.squareup.retrofit2:retrofit:2.4.0',
+            retrofitGson       : 'com.squareup.retrofit2:converter-gson:2.4.0',
+            retrofitAdapter    : 'com.squareup.retrofit2:adapter-rxjava2:2.4.0',
+            rxjavaVersion      : 'io.reactivex.rxjava2:rxjava:2.2.4',
+            rxAndroidVersion   : 'io.reactivex.rxjava2:rxandroid:2.0.2',
+            okHttpVersion      : 'com.squareup.okhttp3:logging-interceptor:3.9.0',
+            rxRelayVersion     : 'com.jakewharton.rxrelay2:rxrelay:2.0.0',
+            fragmentVersion    : 'me.yokeyword:fragmentation:1.3.6',
+            animationVersion   : 'com.airbnb.android:lottie:2.0.0',
+            recyclerviewVersion: 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46',
+            mpChartVersion     : 'com.github.PhilJay:MPAndroidChart:v3.1.0',
+            loggerVersion      : 'com.orhanobut:logger:2.2.0',
+            lottieVersion      : 'com.airbnb.android:lottie:3.0.1',
+            rxPermissionVersion: 'com.github.tbruyelle:rxpermissions:0.10.2'
+    ]
+
+}

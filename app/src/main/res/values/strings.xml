@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FounctionTest</string>
+    <string name="set_rest_time">设置休眠时间</string>
+    <string name="add_rest_time">增加休眠时间</string>
+    <string name="take_photo">拍照</string>
+    <string name="show_picture">显示图片</string>
+    <string name="pre_load">预加载</string>
+    <string name="download">下载</string>
+    <string name="target_download">Target下载</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
