@@ -30,7 +30,11 @@
 
         </activity>
         <activity android:name=".SystemCameraActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".download.DownloadActivity">
 
@@ -47,11 +51,7 @@
         <activity android:name=".network.QingdaoActivity" />
         <activity android:name=".network.TestActivity" />
         <activity android:name=".utils.SoundActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".widgets.NumberKeyActivity" />
         <activity android:name=".widgets.SpinnerActivity" />

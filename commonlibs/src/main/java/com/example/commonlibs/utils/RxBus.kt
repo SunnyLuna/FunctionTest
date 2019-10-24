@@ -46,7 +46,7 @@ class RxBus private constructor() {
     }
 
     private object Holder {
-         val instance = RxBus()
+        val instance = RxBus()
     }
 
     /**
@@ -82,7 +82,7 @@ class RxBus private constructor() {
      * @param disposable
      */
     fun rxBusUnbind(disposable: CompositeDisposable?) {
-        if (null != disposable && disposable.isDisposed) {
+        if (null != disposable && !disposable.isDisposed) {
             disposable.clear()
         }
     }
@@ -114,7 +114,7 @@ class RxBus private constructor() {
             return if (`object` == null) {
                 observable
             } else {
-                observable.mergeWith(Observable.create { emitter -> emitter.onNext(eventType.cast(`object`)) })
+                observable.mergeWith(Observable.create { emitter -> emitter.onNext(eventType.cast(`object`)!!) })
             }
         }
     }

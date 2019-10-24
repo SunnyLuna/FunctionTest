@@ -7,7 +7,7 @@ import android.hardware.Camera
 import android.util.Log
 import android.view.Surface
 import android.view.TextureView
-import com.example.commonlibs.pickview.ScreenUtils
+import com.example.commonlibs.utils.ScreenUtils
 import java.io.ByteArrayOutputStream
 
 /**

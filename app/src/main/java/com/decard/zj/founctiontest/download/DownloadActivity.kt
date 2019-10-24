@@ -10,8 +10,7 @@ import android.util.Log
 import com.decard.appstore.net.responsebean.InitResponse
 import com.decard.zj.founctiontest.R
 import com.decard.zj.founctiontest.TestApplication
-import com.decard.zj.founctiontest.utils.TTSUtils
-import com.example.commonlibs.pickview.ScreenUtils
+import com.example.commonlibs.utils.ScreenUtils
 import com.google.gson.Gson
 import com.tbruyelle.rxpermissions2.RxPermissions
 import io.reactivex.Observer

@@ -14,9 +14,15 @@ public class DateUtils {
         return sdf.format(now);
     }
 
-    public static String changeStyle(long time) {
+    public static String dateToFormat(long time) {
         Date date = new Date(time);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
         return simpleDateFormat.format(date);
     }
+
+    public static String dateToFormat(Date date){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        return simpleDateFormat.format(date);
+    }
+
 }
