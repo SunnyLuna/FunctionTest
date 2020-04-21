@@ -1,7 +1,8 @@
 package com.example.commonlibs
 
+import android.app.Activity
 import android.app.Application
-import android.content.Context
+
 
 /**
  *
@@ -10,17 +11,37 @@ import android.content.Context
  */
 open class BaseApplication : Application() {
 
+    lateinit var activityList: MutableList<Activity>
 
     override fun onCreate() {
         super.onCreate()
-        context = applicationContext
-
+        instance = this
+        activityList = ArrayList()
     }
 
+
     companion object {
-        private var context: Context? = null
-        fun getAppContext(): Context {
-            return context!!
+        lateinit var instance: BaseApplication
+    }
+
+
+    open fun addActivity(activity: Activity?) {
+        if (!activityList.contains(activity)) {
+            activityList.add(activity!!)
+        }
+    }
+
+    open fun removeActivity(activity: Activity) {
+        if (activityList.contains(activity)) {
+            activityList.remove(activity)
+            activity.finish()
+        }
+    }
+
+
+    open fun removeALLActivity() {
+        for (activity in activityList) {
+            activity.finish()
         }
     }
 

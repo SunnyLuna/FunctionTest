@@ -50,7 +50,7 @@ object SDCardUtil {
      * 将assets里面的文件移动至sd卡根目录下
      */
     fun moveAssetsToSDCard(fileName: String) {
-        val inputStream = BaseApplication.getAppContext().assets.open(fileName)
+        val inputStream = BaseApplication.instance.assets.open(fileName)
         val filePath = getSDCardPath() + fileName
         val file = File(filePath)
         if (file.exists()) {
@@ -69,7 +69,7 @@ object SDCardUtil {
      * fileName 文件全名称
      */
     fun moveRawToSDCard(rawId: Int, fileName: String) {
-        val inputStream = BaseApplication.getAppContext().resources.openRawResource(rawId)
+        val inputStream = BaseApplication.instance.resources.openRawResource(rawId)
         val filePath = getSDCardPath() + fileName
         val file = File(filePath)
         if (file.exists()) {

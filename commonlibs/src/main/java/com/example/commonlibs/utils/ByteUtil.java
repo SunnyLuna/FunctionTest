@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Arrays;
 
 
 @SuppressLint("UseValueOf")
@@ -74,6 +75,28 @@ public class ByteUtil {
         int retY = (h - width) / 2;
 
         return Bitmap.createBitmap(bitmap, retX, retY, width, width + 30, null, false);
+    }
+
+    public static Bitmap convertbytesToIcon(byte[] bmpStr) {
+
+        try {
+            return BitmapFactory.decodeByteArray(bmpStr, 0,
+                    bmpStr.length);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static byte[] concat(byte[] first, byte[] second) {
+        if (first == null) {
+            return second;
+        }
+        if (second == null) {
+            return first;
+        }
+        byte[] result = Arrays.copyOf(first, first.length + second.length);
+        System.arraycopy(second, 0, result, first.length, second.length);
+        return result;
     }
 
 }

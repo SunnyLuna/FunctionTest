@@ -21,13 +21,13 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
  * AppException处理类,当程序发生Uncaught异常的时候,有该类来接管程序,并记录发送错误报告.
  *
  * @author user
- *
  */
 public class AppException implements UncaughtExceptionHandler {
 
@@ -43,13 +43,17 @@ public class AppException implements UncaughtExceptionHandler {
     private Map<String, String> infos = new HashMap<String, String>();
 
     //用于格式化日期,作为日志文件名的一部分
-    private DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+    private DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss", Locale.getDefault());
 
-    /** 保证只有一个AppEeception实例 */
+    /**
+     * 保证只有一个AppEeception实例
+     */
     private AppException() {
     }
 
-    /** 获取AppException实例 ,单例模式 */
+    /**
+     * 获取AppException实例 ,单例模式
+     */
     public static AppException getInstance() {
         return INSTANCE;
     }
@@ -115,6 +119,7 @@ public class AppException implements UncaughtExceptionHandler {
 
     /**
      * 收集设备参数信息
+     *
      * @param ctx
      */
     public void collectDeviceInfo(Context ctx) {
@@ -146,7 +151,7 @@ public class AppException implements UncaughtExceptionHandler {
      * 保存错误信息到文件中
      *
      * @param ex
-     * @return  返回文件名称,便于将文件传送到服务器
+     * @return 返回文件名称, 便于将文件传送到服务器
      */
     private String saveCrashInfo2File(Throwable ex) {
 

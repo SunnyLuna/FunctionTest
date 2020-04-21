@@ -30,7 +30,7 @@ public class TestActivity extends AppCompatActivity {
         btn_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RetrofitUtil.INSTANCE.getTest().getName().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<String>() {
+                RetrofitUtil.INSTANCE.getdc().getDc("{\"func\": \"dc_stopAliPay\",\"in\": [\"100\"]}").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 

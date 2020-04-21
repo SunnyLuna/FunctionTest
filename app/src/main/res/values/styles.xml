@@ -12,4 +12,12 @@
         <item name="android:windowEnterAnimation">@anim/enter_animation</item>
         <item name="android:windowExitAnimation">@anim/exit_animation</item>
     </style>
+
+    <style name="Dialog.FullScreen" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <color name="colorTransparent">#00000000</color>
 </resources>

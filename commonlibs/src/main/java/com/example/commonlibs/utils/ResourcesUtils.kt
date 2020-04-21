@@ -24,7 +24,7 @@ object ResourcesUtils {
      * @return 资源文件对应字符串
      */
     fun getString(id: Int): String {
-        return BaseApplication.getAppContext().resources.getString(id)
+        return BaseApplication.instance.resources.getString(id)
     }
 
     /**
@@ -34,7 +34,7 @@ object ResourcesUtils {
      * @return 资源文件对应字符串数组
      */
     fun getStringArray(id: Int): Array<String> {
-        return BaseApplication.getAppContext().resources.getStringArray(id)
+        return BaseApplication.instance.resources.getStringArray(id)
     }
 
     /**
@@ -44,7 +44,7 @@ object ResourcesUtils {
      * @return 资源文件对应图片
      */
     fun getDrawable(id: Int): Drawable {
-        return BaseApplication.getAppContext().resources.getDrawable(id)
+        return BaseApplication.instance.resources.getDrawable(id)
     }
 
     /**
@@ -54,7 +54,7 @@ object ResourcesUtils {
      * @return 资源文件对应颜色值
      */
     fun getColor(id: Int): Int {
-        return BaseApplication.getAppContext().resources.getColor(id)
+        return BaseApplication.instance.resources.getColor(id)
     }
 
     /**
@@ -64,7 +64,7 @@ object ResourcesUtils {
      * @return 资源文件对应颜色状态
      */
     fun getColorStateList(id: Int): ColorStateList {
-        return BaseApplication.getAppContext().resources.getColorStateList(id)
+        return BaseApplication.instance.resources.getColorStateList(id)
     }
 
     /**
@@ -74,7 +74,7 @@ object ResourcesUtils {
      * @return 资源文件对应像素值
      */
     fun getDimen(id: Int): Int {
-        return BaseApplication.getAppContext().resources.getDimensionPixelSize(id)// 返回具体像素值
+        return BaseApplication.instance.resources.getDimensionPixelSize(id)// 返回具体像素值
     }
 
     /**
@@ -84,31 +84,31 @@ object ResourcesUtils {
      * @return 布局view
      */
     fun inflate(id: Int): View {
-        return View.inflate(BaseApplication.getAppContext(), id, null)
+        return View.inflate(BaseApplication.instance, id, null)
     }
 
     fun readRaw(id: Int): InputStream {
-        return BaseApplication.getAppContext().resources.openRawResource(id)
+        return BaseApplication.instance.resources.openRawResource(id)
     }
 
     /**
      *return the content of Raw
      */
     fun readRawString(id: Int): String {
-        val inputStream = BaseApplication.getAppContext().resources.openRawResource(id)//id是我的文件名，这里应该根据具体文件更改
+        val inputStream = BaseApplication.instance.resources.openRawResource(id)//id是我的文件名，这里应该根据具体文件更改
         return inputStream2String(inputStream)
     }
 
 
     fun readAssets(fileName: String): InputStream {
-        return BaseApplication.getAppContext().assets.open(fileName)
+        return BaseApplication.instance.assets.open(fileName)
     }
 
     /**
      * return the content of asserts
      */
     fun readAssetsString(fileName: String): String {
-        val inputStream = BaseApplication.getAppContext().assets.open(fileName)
+        val inputStream = BaseApplication.instance.assets.open(fileName)
         return inputStream2String(inputStream)
     }
 

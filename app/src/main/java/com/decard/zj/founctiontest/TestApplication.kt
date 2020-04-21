@@ -1,6 +1,5 @@
 package com.decard.zj.founctiontest
 
-import android.content.Context
 import com.example.commonlibs.BaseApplication
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -16,7 +15,7 @@ class TestApplication : BaseApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        context = applicationContext
+        instance = this
 //        MultiDex.install(this)
         Realm.init(this)
         val configuration = RealmConfiguration
@@ -25,13 +24,11 @@ class TestApplication : BaseApplication() {
                 .schemaVersion(1)
                 .build()
         Realm.setDefaultConfiguration(configuration)
+
     }
 
     companion object {
-        private var context: Context? = null
-        fun getAppContext(): Context {
-            return context!!
-        }
+        lateinit var instance: TestApplication
     }
 
 }

@@ -18,7 +18,7 @@ public class SpeechUtils implements TextToSpeech.OnInitListener {
     private static SpeechUtils instance;
 
     public SpeechUtils() {
-        textToSpeech = new TextToSpeech(BaseApplication.Companion.getAppContext(), this);
+        textToSpeech = new TextToSpeech(BaseApplication.instance, this);
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {

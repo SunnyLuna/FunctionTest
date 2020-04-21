@@ -3,20 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.decard.zj.founctiontest">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.CAMERA" />
-
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
     <application
         android:name=".TestApplication"
         android:allowBackup="true"
@@ -26,35 +12,50 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:name">
-        <activity android:name=".widgets.TestProgressButton">
+        <activity android:name=".calendar.SelectTimeActivity">
 
         </activity>
-        <activity android:name=".SystemCameraActivity">
+        <activity android:name=".net.NetActivity" />
+        <activity android:name=".BitmapActivity" />
+        <activity android:name=".widgets.TestProgressButton" />
+        <activity android:name=".SystemCameraActivity" />
+        <activity android:name=".download.DownloadActivity" />
+        <activity android:name=".TestBasicVideo" />
+        <activity android:name=".network.RetrofitActivity" />
+        <activity android:name=".RxPermissionActivity" />
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".wakelocktest.WakeLockActivity" />
+        <activity android:name=".wakelocktest.RestActivity" />
+        <activity android:name=".camera.CameraActivity" />
+        <activity android:name=".camera.Camera2Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".download.DownloadActivity">
-
-        </activity>
-        <activity android:name=".TestBasicVideo" />
-        <activity android:name=".network.RetrofitActivity" />
-        <activity android:name=".RxPermissionActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".wakelocktest.WakeLockActivity" />
-        <activity android:name=".wakelocktest.RestActivity" />
-        <activity android:name=".camera.CameraActivity" />
-        <activity android:name=".camera.Camera2Activity" />
         <activity android:name=".picture.GlideActivity" />
         <activity android:name=".network.QingdaoActivity" />
-        <activity android:name=".network.TestActivity" />
-        <activity android:name=".utils.SoundActivity" >
+        <activity android:name=".network.TestActivity">
 
         </activity>
-        <activity android:name=".widgets.NumberKeyActivity" />
+        <activity android:name=".utils.SoundActivity" />
         <activity android:name=".widgets.SpinnerActivity" />
     </application>
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
 </manifest>

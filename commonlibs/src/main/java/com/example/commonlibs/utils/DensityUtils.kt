@@ -13,8 +13,8 @@ object DensityUtils {
     /**
      * dp转px
      */
-    fun dp2px(context: Context, dpVal: Float): Float {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpVal, context.resources.displayMetrics)
+    fun dp2px(context: Context, dpVal: Float): Int {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpVal, context.resources.displayMetrics).toInt()
     }
 
     /**

@@ -31,10 +31,10 @@ object RetrofitUtil {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
     }
+
     private fun <T> getService(url: String, service: Class<T>): T {
         return create(url).create(service)
     }
-
 
 
     private fun createString(url: String): Retrofit {
@@ -49,7 +49,6 @@ object RetrofitUtil {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
     }
-
 
 
     private fun <T> getStringService(url: String, service: Class<T>): T {
@@ -88,5 +87,9 @@ object RetrofitUtil {
 
     fun getTest(): RetrofitService {
         return getTestService("http://192.168.5.141:8080/", RetrofitService::class.java)
+    }
+
+    fun getdc(): RetrofitService {
+        return getTestService("http://127.0.0.1:8080/", RetrofitService::class.java)
     }
 }

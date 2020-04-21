@@ -21,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:layout_marginBottom="300dp"
-            android:onClick="@{main::go}"
-            android:text="点击"
+            android:onClick="@{main::read}"
+            android:text="读取"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline" />
 
@@ -38,7 +38,8 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="保存"
+            android:onClick="@{main::save}"
             app:layout_constraintBottom_toBottomOf="@+id/btn_go"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="@+id/btn_go" />

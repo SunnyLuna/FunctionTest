@@ -36,6 +36,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    implementation rootProject.ext.dependencies.junitVersion
     implementation rootProject.ext.dependencies.retrofitVersion
     implementation rootProject.ext.dependencies.retrofitGson
     implementation rootProject.ext.dependencies.retrofitAdapter
@@ -47,4 +48,6 @@ dependencies {
     //fragmentation
     api rootProject.ext.dependencies.fragmentVersion
     implementation rootProject.ext.dependencies.recyclerviewVersion
+    implementation rootProject.ext.dependencies.logVersion
+    implementation rootProject.ext.dependencies.slf4jVersion
 }

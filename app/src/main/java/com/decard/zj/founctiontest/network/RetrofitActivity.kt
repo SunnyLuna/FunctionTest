@@ -1,6 +1,6 @@
 package com.decard.zj.founctiontest.network
 
-import FileUtils
+import com.example.commonlibs.utils.FileUtils
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.annotation.SuppressLint
@@ -41,10 +41,10 @@ class RetrofitActivity : AppCompatActivity() {
         super.onResume()
         button2.setOnClickListener {
             //            val bitmap = BitmapFactory.decodeResource(resources, R.mipmap.yan)
-//            FileUtils.saveMyBitmap("天行九歌", "焰灵姬", bitmap)
+//            com.example.commonlibs.utils.FileUtils.saveMyBitmap("天行九歌", "焰灵姬", bitmap)
 //            val oldPath = Environment.getExternalStorageDirectory().absolutePath + "/秦时明月/焰灵姬.png"
 //            val file = File(oldPath)
-//            var fileToBase64 = FileUtils.fileToBase64(file)
+//            var fileToBase64 = com.example.commonlibs.utils.FileUtils.fileToBase64(file)
 //            SDCardUtil.saveToSDCard("base64.txt", fileToBase64!!)
 //            Log.d("-------", fileToBase64)
         }

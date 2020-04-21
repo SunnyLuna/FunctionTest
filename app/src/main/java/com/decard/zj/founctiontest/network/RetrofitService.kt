@@ -30,6 +30,9 @@ interface RetrofitService {
     @GET("hello")
     fun getName(): Observable<String>
 
+    @Multipart
+    @POST("dc/intelligent")
+    fun getDc(@Part("param") param: String): Observable<String>
 
 
 }

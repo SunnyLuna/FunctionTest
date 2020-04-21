@@ -1,4 +1,8 @@
+package com.example.commonlibs.utils
+
+import android.content.Context
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Environment
 import android.util.Base64
 import android.util.Log
@@ -79,7 +83,7 @@ object FileUtils {
             fOut.close()
 
         } catch (e: IOException) {
-            return "在保存图片时出错：" + e.toString()
+            return "在保存图片时出错：$e"
         }
         return photo.absolutePath
     }
@@ -121,6 +125,96 @@ object FileUtils {
             }
         }
         return base64
+    }
+
+    fun copyFileTest(oldPath: String?, newPath: String?): String? {
+        return try {
+            var bytesum = 0
+            var byteread = 0
+            val oldfile = File(oldPath)
+            if (oldfile.exists()) { //文件存在时
+                val inStream: InputStream = FileInputStream(oldPath) //读入原文件
+                val fs = FileOutputStream(newPath)
+                val buffer = ByteArray(1444)
+                var length: Int
+                while (inStream.read(buffer).also { byteread = it } != -1) {
+                    bytesum += byteread //字节数 文件大小
+                    println(bytesum)
+                    fs.write(buffer, 0, byteread)
+                }
+                Log.d(TAG, "copyFileTest: 文件写入成功")
+                inStream.close()
+                "文件写入成功"
+            } else {
+                Log.d(TAG, "copyFile: 文件不存在")
+                "文件不存在"
+            }
+        } catch (e: Exception) {
+            Log.d(TAG, "copyFile: 复制文件报错")
+            e.printStackTrace()
+            "复制文件报错$e"
+        }
+    }
+
+    fun copyUri(mContext: Context, oldPath: String?, destUri: Uri?): String? {
+        return try {
+            val os = mContext.contentResolver.openOutputStream(destUri)
+            val `is`: InputStream = FileInputStream(oldPath) //读入原文件
+            var bytesRead = 0
+            val buffer = ByteArray(1024 * 8)
+            while (`is`.read(buffer).also { bytesRead = it } != -1) {
+                os.write(buffer, 0, bytesRead)
+            }
+            os.flush()
+            os.close()
+            `is`.close()
+            "成功"
+        } catch (e: java.lang.Exception) {
+            Log.e(TAG, e.message)
+            "失败"
+        }
+    }
+
+    /**
+     * 复制整个文件夹内容
+     *
+     * @param oldPath String 原文件路径 如：c:/fqf
+     * @param newPath String 复制后路径 如：f:/fqf/ff
+     * @return boolean
+     */
+    fun copyFolder(oldPath: String, newPath: String) {
+        try {
+            File(newPath).mkdirs() //如果文件夹不存在 则建立新文件夹
+            val a = File(oldPath)
+            val file = a.list()
+            var temp: File? = null
+            for (i in file.indices) {
+                temp = if (oldPath.endsWith(File.separator)) {
+                    File(oldPath + file[i])
+                } else {
+                    File(oldPath + File.separator + file[i])
+                }
+                if (temp.isFile) {
+                    val input = FileInputStream(temp)
+                    val output = FileOutputStream(newPath + "/" +
+                            temp.name.toString())
+                    val b = ByteArray(1024 * 5)
+                    var len: Int
+                    while (input.read(b).also { len = it } != -1) {
+                        output.write(b, 0, len)
+                    }
+                    output.flush()
+                    output.close()
+                    input.close()
+                }
+                if (temp.isDirectory) { //如果是子文件夹
+                    copyFolder(oldPath + "/" + file[i], newPath + "/" + file[i])
+                }
+            }
+        } catch (e: java.lang.Exception) {
+            println("复制整个文件夹内容操作出错")
+            e.printStackTrace()
+        }
     }
 
     /**

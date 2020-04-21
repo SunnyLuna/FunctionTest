@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.inputmethod.InputMethodManager;
 
+import com.example.commonlibs.BaseApplication;
+
 import me.yokeyword.fragmentation.SupportActivity;
 import me.yokeyword.fragmentation.anim.DefaultVerticalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
@@ -17,8 +19,9 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator;
  */
 
 public abstract class BaseCompatActivity extends SupportActivity {
-    protected Context mContext;//全局上下文对象
+    protected BaseCompatActivity mContext;//全局上下文对象
     protected boolean isTransAnim;
+    private BaseApplication application;
 
     static {
         //5.0以下兼容vector
@@ -29,6 +32,9 @@ public abstract class BaseCompatActivity extends SupportActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init(savedInstanceState);
+        mContext = this;
+        application = BaseApplication.instance;
+        addActivity();
     }
 
     @Override
@@ -179,5 +185,21 @@ public abstract class BaseCompatActivity extends SupportActivity {
      */
     protected void setIsTransAnim(boolean b) {
         isTransAnim = b;
+    }
+
+
+    // 添加Activity方法
+    public void addActivity() {
+        application.addActivity(mContext);// 调用myApplication的添加Activity方法
+    }
+
+    //销毁当个Activity方法
+    public void removeActivity() {
+        application.removeActivity(mContext);// 调用myApplication的销毁单个Activity方法
+    }
+
+    //销毁所有Activity方法
+    public void removeALLActivity() {
+        application.removeALLActivity();// 调用myApplication的销毁所有Activity方法
     }
 }

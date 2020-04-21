@@ -2,8 +2,8 @@ package com.decard.zj.founctiontest.download
 
 import android.util.Log
 import com.decard.zj.founctiontest.TestApplication
-import com.decard.zj.founctiontest.download.apkinstaller.PackageUtils
 import com.decard.zj.kotlinbaseapplication.utils.RxBusInner
+import com.example.commonlibs.apkinstaller.PackageUtils
 import java.io.File
 import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor
@@ -61,7 +61,7 @@ object DownloadManager {
             installApp(dataBean)
             //状态为打开，打开app
         } else if (dataBean.status == DownloadStatus.OPEN) {
-            PacketsUtil.openApp(TestApplication.getAppContext(), dataBean.packetName)
+            PacketsUtil.openApp(TestApplication.instance, dataBean.packetName)
         }
     }
 
@@ -73,7 +73,7 @@ object DownloadManager {
         val file = File(dataBean.filePath)
         val fileMD5 = MD5Util.getFileMD5(file)
         if (fileMD5 == dataBean.fileMD5) {
-            val code = PackageUtils.install(TestApplication.getAppContext(), dataBean.filePath, dataBean.packetName)
+            val code = PackageUtils.install(TestApplication.instance, dataBean.filePath, dataBean.packetName)
             dataBean.status = DownloadStatus.OPEN
             RxBusInner.getInstance().post(DownloadBean(dataBean.apkName!!, -1, DownloadStatus.OPEN))
             DBUtil.addData(dataBean)

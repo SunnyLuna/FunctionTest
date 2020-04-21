@@ -83,7 +83,7 @@ class CameraUtils {
      */
     @SuppressLint("MissingPermission")
     private fun openCamera() {
-        val cameraManager: CameraManager = TestApplication.getAppContext().getSystemService(Context.CAMERA_SERVICE) as CameraManager
+        val cameraManager: CameraManager = TestApplication.instance.getSystemService(Context.CAMERA_SERVICE) as CameraManager
         //设置摄像头特性
         setCameraCharacters(cameraManager)
         cameraManager.openCamera(cameraId, stateCallback, null)

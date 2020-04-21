@@ -3,7 +3,7 @@ package com.example.commonlibs.network
 import android.util.Log
 import com.decard.zj.mykotlintest.calender.api.RetrofitService
 import com.example.commonlibs.BaseApplication
-import com.example.commonlibs.utils.NetUtils
+import com.example.commonlibs.net.NetUtils
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -31,17 +31,17 @@ class RetrofitUtils {
     private constructor() {
         //手动创建一个OkHttpClient并设置超时时间
         //设置缓存
-        val cacheFile = File(BaseApplication.getAppContext().cacheDir, CACHE_NAME)
+        val cacheFile = File(BaseApplication.instance.cacheDir, CACHE_NAME)
         val cache = Cache(cacheFile, 1024 * 1024 * 50)//设置缓存大小为50M
         val interceptor = object : Interceptor {
             override fun intercept(chain: Interceptor.Chain): Response {
                 var request = chain.request()
-                if (!NetUtils.isConnected(BaseApplication.getAppContext())) {
+                if (!NetUtils.isNetworkAvailable()) {
                     request = request.newBuilder().cacheControl(CacheControl.FORCE_CACHE).build()
                 }
                 val response = chain.proceed(request)
 
-                if (NetUtils.isConnected(BaseApplication.getAppContext())) {
+                if (NetUtils.isNetworkAvailable()) {
 
                     val maxAge = 600//缓存失效时间
                     //有网络时，设置缓存超时时间

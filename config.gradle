@@ -23,7 +23,9 @@ ext {
             mpChartVersion     : 'com.github.PhilJay:MPAndroidChart:v3.1.0',
             loggerVersion      : 'com.orhanobut:logger:2.2.0',
             lottieVersion      : 'com.airbnb.android:lottie:3.0.1',
-            rxPermissionVersion: 'com.github.tbruyelle:rxpermissions:0.10.2'
+            rxPermissionVersion: 'com.github.tbruyelle:rxpermissions:0.10.2',
+            slf4jVersion       : 'org.slf4j:slf4j-api:1.7.25',
+            logVersion         : 'com.github.tony19:logback-android:2.0.0'
     ]
 
 }

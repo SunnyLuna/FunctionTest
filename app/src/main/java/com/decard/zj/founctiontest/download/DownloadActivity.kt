@@ -62,7 +62,7 @@ class DownloadActivity : AppCompatActivity() {
         val gson = Gson()
         val initRequestBean = InitRequestBean(
                 Settings.Secure.getString(
-                        TestApplication.getAppContext().contentResolver,
+                        TestApplication.instance.contentResolver,
                         Settings.Secure.ANDROID_ID
                 ),
                 Build.MODEL,

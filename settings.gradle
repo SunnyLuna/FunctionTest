@@ -1,1 +1,2 @@
 include ':app', ':commonlibs'
+include ':calendarlibs'
