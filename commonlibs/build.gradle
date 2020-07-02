@@ -10,8 +10,8 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
     }
 
     buildTypes {
@@ -27,27 +27,46 @@ android {
 
 }
 
+
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "com.android.support:appcompat-v7:28.0.0"
+    implementation 'androidx.appcompat:appcompat:1.0.0'
 
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation rootProject.ext.dependencies.junitVersion
-    implementation rootProject.ext.dependencies.retrofitVersion
-    implementation rootProject.ext.dependencies.retrofitGson
-    implementation rootProject.ext.dependencies.retrofitAdapter
-    implementation rootProject.ext.dependencies.rxjavaVersion
-    implementation rootProject.ext.dependencies.rxAndroidVersion
-    implementation rootProject.ext.dependencies.okHttpVersion
-    implementation rootProject.ext.dependencies.rxRelayVersion
-    implementation rootProject.ext.dependencies.animationVersion
-    //fragmentation
-    api rootProject.ext.dependencies.fragmentVersion
-    implementation rootProject.ext.dependencies.recyclerviewVersion
-    implementation rootProject.ext.dependencies.logVersion
-    implementation rootProject.ext.dependencies.slf4jVersion
+   implementation rootProject.ext.dependencies. junitVersion
+   implementation rootProject.ext.dependencies. recyclerViewVersion
+   implementation rootProject.ext.dependencies. viewpagerVersion
+   implementation rootProject.ext.dependencies. dataBindingVersion
+   implementation rootProject.ext.dependencies. retrofitVersion
+   implementation rootProject.ext.dependencies. retrofitGson
+   implementation rootProject.ext.dependencies. retrofitAdapter
+   implementation rootProject.ext.dependencies. rxjavaVersion
+   implementation rootProject.ext.dependencies. rxAndroidVersion
+   implementation rootProject.ext.dependencies. okHttpVersion
+   implementation rootProject.ext.dependencies. rxRelayVersion
+   implementation rootProject.ext.dependencies. fragmentVersion
+   implementation rootProject.ext.dependencies. animationVersion
+   implementation rootProject.ext.dependencies. recyclerviewHelperVersion
+   implementation rootProject.ext.dependencies. mpChartVersion
+   implementation rootProject.ext.dependencies. loggerVersion
+   implementation rootProject.ext.dependencies. rxPermissionVersion
+   implementation rootProject.ext.dependencies. glideVersion
+   implementation rootProject.ext.dependencies. buglyVersion
+   implementation rootProject.ext.dependencies. buglyNativeVersion
+   implementation rootProject.ext.dependencies. circleImage
+   implementation rootProject.ext.dependencies. roomRunVersion
+   implementation rootProject.ext.dependencies. roomCompilerVersion
+   implementation rootProject.ext.dependencies. roomTestVersion
+   implementation rootProject.ext.dependencies. roomRxjavaVersion
+   implementation rootProject.ext.dependencies. pickerViewVersion
+   implementation rootProject.ext.dependencies. slf4jVersion
+   implementation rootProject.ext.dependencies. logVersion
+   implementation rootProject.ext.dependencies. coroutinesCoreVersion
+   implementation rootProject.ext.dependencies. coroutinesAndroidVersion
+   implementation rootProject.ext.dependencies. serialPortVersion
 }

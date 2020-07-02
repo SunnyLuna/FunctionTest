@@ -1,6 +1,6 @@
 package com.example.commonlibs.mvp;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Created by Horrarndoo on 2017/4/25.

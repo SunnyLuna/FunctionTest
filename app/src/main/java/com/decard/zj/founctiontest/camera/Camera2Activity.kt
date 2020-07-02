@@ -3,18 +3,20 @@ package com.decard.zj.founctiontest.camera
 import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.hardware.Camera
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.decard.zj.founctiontest.R
-import com.decard.zj.kotlinbaseapplication.utils.RxBusInner
+import com.decard.zj.founctiontest.serialport.RxBusInner
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_camera2.*
+
 
 class Camera2Activity : AppCompatActivity() {
 
@@ -22,6 +24,8 @@ class Camera2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera2)
+        val cametacount: Int = Camera.getNumberOfCameras()
+        Log.d("---------", "onCreate: " + cametacount)
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             val perms = arrayOf("android.permission.CAMERA")
             ActivityCompat.requestPermissions(this, perms, RESULT_CODE_CAMERA)

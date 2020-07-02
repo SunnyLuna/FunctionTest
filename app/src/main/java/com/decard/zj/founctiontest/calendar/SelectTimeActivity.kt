@@ -1,14 +1,9 @@
 package com.decard.zj.founctiontest.calendar
 
 import android.os.Bundle
-import android.util.Log
 import com.decard.zj.founctiontest.R
-import com.example.commonlibs.BuildConfig
 import com.example.commonlibs.mvp.activity.BaseCompatActivity
-import com.orhanobut.logger.AndroidLogAdapter
-import com.orhanobut.logger.DiskLogAdapter
 import com.orhanobut.logger.Logger
-import com.orhanobut.logger.PrettyFormatStrategy
 import com.tbruyelle.rxpermissions2.RxPermissions
 
 

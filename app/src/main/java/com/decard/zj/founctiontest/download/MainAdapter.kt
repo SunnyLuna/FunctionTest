@@ -2,9 +2,7 @@ package com.decard.zj.founctiontest.download
 
 import android.app.Activity
 import android.graphics.Bitmap
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory
-import android.support.v7.widget.RecyclerView
-import android.util.Log
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +12,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.decard.zj.founctiontest.R
-import com.decard.zj.kotlinbaseapplication.utils.RxBusInner
+import com.decard.zj.founctiontest.serialport.RxBusInner
 import io.reactivex.android.schedulers.AndroidSchedulers
 
 /**
@@ -25,7 +23,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
  * @Description:
 
  */
-class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+class MainAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
     private val TAG = MainAdapter::class.java.simpleName
     private var mItemClickListener: OnItemClickListener? = null
     private var mJumpToAppDetailListener: JumpToAppDetailListener? = null
@@ -117,7 +115,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
         }
     }
 
-    class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class MainViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         val image = itemView.findViewById<ImageView>(R.id.item_main_logo)
         val name = itemView.findViewById<TextView>(R.id.item_main_name)
         val description = itemView.findViewById<TextView>(R.id.item_main_description)

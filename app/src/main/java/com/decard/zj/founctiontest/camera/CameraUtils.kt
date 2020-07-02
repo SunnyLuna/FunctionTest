@@ -11,15 +11,13 @@ import android.hardware.camera2.*
 import android.hardware.camera2.CameraManager
 import android.hardware.camera2.params.StreamConfigurationMap
 import android.media.ImageReader
-import android.os.Build
-import android.support.annotation.RequiresApi
 import android.util.Log
 import android.util.Size
 import android.util.SparseArray
 import android.view.Surface
 import android.view.TextureView
 import com.decard.zj.founctiontest.TestApplication
-import com.decard.zj.kotlinbaseapplication.utils.RxBusInner
+import com.decard.zj.founctiontest.serialport.RxBusInner
 import java.util.*
 
 /**
@@ -84,9 +82,11 @@ class CameraUtils {
     @SuppressLint("MissingPermission")
     private fun openCamera() {
         val cameraManager: CameraManager = TestApplication.instance.getSystemService(Context.CAMERA_SERVICE) as CameraManager
+        val list = cameraManager.cameraIdList
+        Log.d(TAG, "list': ${list.size}");
         //设置摄像头特性
-        setCameraCharacters(cameraManager)
-        cameraManager.openCamera(cameraId, stateCallback, null)
+//        setCameraCharacters(cameraManager)
+//        cameraManager.openCamera(cameraId, stateCallback, null)
 
 
     }

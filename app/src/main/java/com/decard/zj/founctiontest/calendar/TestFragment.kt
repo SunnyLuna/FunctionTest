@@ -21,7 +21,7 @@ class TestFragment : BaseCompatFragment() {
 
     override fun initUI(view: View?, savedInstanceState: Bundle?) {
         btn_showCalendar.setOnClickListener {
-            CalendarDialogFragment().show(fragmentManager, "calendar")
+            CalendarDialogFragment().show(fragmentManager!!, "calendar")
         }
     }
 

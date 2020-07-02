@@ -1,8 +1,7 @@
 package com.decard.zj.founctiontest
 
 import com.example.commonlibs.BaseApplication
-import io.realm.Realm
-import io.realm.RealmConfiguration
+import com.example.commonlibs.utils.LogUtils
 
 /**
  * File Description
@@ -16,14 +15,15 @@ class TestApplication : BaseApplication() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        LogUtils.config(true, true)
 //        MultiDex.install(this)
-        Realm.init(this)
-        val configuration = RealmConfiguration
-                .Builder()
-                .name("AppStore.realm")
-                .schemaVersion(1)
-                .build()
-        Realm.setDefaultConfiguration(configuration)
+//        Realm.init(this)
+//        val configuration = RealmConfiguration
+//                .Builder()
+//                .name("AppStore.realm")
+//                .schemaVersion(1)
+//                .build()
+//        Realm.setDefaultConfiguration(configuration)
 
     }
 

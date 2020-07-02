@@ -1,7 +1,6 @@
 package com.decard.zj.founctiontest.serialport
 
 import android.os.SystemClock
-import com.decard.zj.kotlinbaseapplication.utils.RxBusInner
 import java.io.BufferedInputStream
 import java.io.InputStream
 

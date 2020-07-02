@@ -2,7 +2,7 @@ package com.example.commonlibs.mvp;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import me.yokeyword.fragmentation.SupportFragment;
 

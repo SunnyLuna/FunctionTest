@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.decard.zj.founctiontest">
+<!--    android:sharedUserId="android.uid.system"-->
 
     <application
         android:name=".TestApplication"
@@ -12,35 +13,55 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:name">
-        <activity android:name=".calendar.SelectTimeActivity">
+        <activity android:name=".network.coroutine.CoroutineActivity">
 
         </activity>
+        <activity android:name=".calendar.SelectTimeActivity" />
         <activity android:name=".net.NetActivity" />
-        <activity android:name=".BitmapActivity" />
+        <activity android:name=".picture.BitmapActivity" />
         <activity android:name=".widgets.TestProgressButton" />
-        <activity android:name=".SystemCameraActivity" />
         <activity android:name=".download.DownloadActivity" />
         <activity android:name=".TestBasicVideo" />
         <activity android:name=".network.RetrofitActivity" />
-        <activity android:name=".RxPermissionActivity" />
-        <activity android:name=".MainActivity"></activity>
         <activity android:name=".wakelocktest.WakeLockActivity" />
         <activity android:name=".wakelocktest.RestActivity" />
         <activity android:name=".camera.CameraActivity" />
-        <activity android:name=".camera.Camera2Activity" >
+        <activity android:name=".camera.Camera2Activity" />
+        <activity android:name=".picture.GlideActivity" />
+        <activity android:name=".network.QingdaoActivity" />
+        <activity android:name=".network.TestActivity" />
+        <activity android:name=".utils.SoundActivity"></activity>
+        <activity android:name=".widgets.SpinnerActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".picture.GlideActivity" />
-        <activity android:name=".network.QingdaoActivity" />
-        <activity android:name=".network.TestActivity">
 
-        </activity>
-        <activity android:name=".utils.SoundActivity" />
-        <activity android:name=".widgets.SpinnerActivity" />
+        <receiver
+            android:name=".utils.AutoStartBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".service.AutoService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
     <uses-feature android:name="android.hardware.camera" />
@@ -55,7 +76,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
 
 </manifest>

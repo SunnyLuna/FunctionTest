@@ -2,7 +2,7 @@ package com.decard.zj.founctiontest.download
 
 import android.util.Log
 import com.decard.zj.founctiontest.TestApplication
-import com.decard.zj.kotlinbaseapplication.utils.RxBusInner
+import com.decard.zj.founctiontest.serialport.RxBusInner
 import com.example.commonlibs.apkinstaller.PackageUtils
 import java.io.File
 import java.util.concurrent.ArrayBlockingQueue

@@ -7,6 +7,7 @@ import android.os.Environment
 import android.util.Base64
 import android.util.Log
 import java.io.*
+import java.util.ArrayList
 
 object FileUtils {
 
@@ -231,4 +232,77 @@ object FileUtils {
     }
 
 
+    // 判断文件是否存在
+    fun fileIsExists(strFile: String?): Boolean {
+        try {
+            val f = File(strFile)
+            if (!f.exists()) {
+                return false
+            }
+        } catch (e: java.lang.Exception) {
+            return false
+        }
+        return true
+    }
+
+    /**
+     * 读取文本中的内容
+     */
+    fun readFile(strFilePath: String): String? {
+        var content: String? = "" // 文件内容字符串
+        // 打开文件
+        val file = File(strFilePath)
+        // 如果path是传递过来的参数，可以做一个非目录的判断
+        if (file.isDirectory) {
+            Log.d("TestFile", "The File doesn't not exist.")
+        } else {
+            try {
+                val instream: InputStream = FileInputStream(file)
+                val inputreader = InputStreamReader(instream)
+                val buffreader = BufferedReader(inputreader)
+                var line: String?
+                // 分行读取
+                while (buffreader.readLine().also { line = it } != null) {
+                    content += line
+                }
+                instream.close()
+            } catch (e: FileNotFoundException) {
+                Log.d("TestFile", "The File doesn't not exist.")
+            } catch (e: IOException) {
+                Log.d("TestFile", e.message)
+            }
+        }
+        return content
+    }
+
+
+    /**
+     * 分行读取文本中的内容
+     */
+    fun readLicense(strFilePath: String): ArrayList<String>? {
+        val licenseList = ArrayList<String>()
+        // 打开文件
+        val file = File(strFilePath)
+        // 如果path是传递过来的参数，可以做一个非目录的判断
+        if (file.isDirectory) {
+            Log.d("TestFile", "The File doesn't not exist.")
+        } else {
+            try {
+                val instream: InputStream = FileInputStream(file)
+                val inputreader = InputStreamReader(instream)
+                val buffreader = BufferedReader(inputreader)
+                var line: String?
+                // 分行读取
+                while (buffreader.readLine().also { line = it } != null) {
+                    licenseList.add(line!!)
+                }
+                instream.close()
+            } catch (e: FileNotFoundException) {
+                Log.d("TestFile", "The File doesn't not exist.")
+            } catch (e: IOException) {
+                Log.d("TestFile", e.message)
+            }
+        }
+        return licenseList
+    }
 }

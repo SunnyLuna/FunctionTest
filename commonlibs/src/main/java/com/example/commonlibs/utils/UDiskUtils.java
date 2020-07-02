@@ -114,7 +114,7 @@ public class UDiskUtils {
         List<String> data = new ArrayList<>();    // include sd and usb devices
         StorageManager storageManager = (StorageManager) con.getSystemService(Context.STORAGE_SERVICE);
         try {
-            paths = (String[]) StorageManager.class.getMethod("getVolumePaths", null).invoke(storageManager, null);
+            paths = (String[]) StorageManager.class.getMethod("getVolumePaths", String.class).invoke(storageManager, "");
             for (String path : paths) {
                 String state = (String) StorageManager.class.getMethod("getVolumeState", String.class).invoke(storageManager, path);
                 if (state.equals(Environment.MEDIA_MOUNTED) && !path.contains("emulated")) {

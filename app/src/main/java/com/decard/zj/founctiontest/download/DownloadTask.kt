@@ -1,7 +1,7 @@
 package com.decard.zj.founctiontest.download
 
 import android.util.Log
-import com.decard.zj.kotlinbaseapplication.utils.RxBusInner
+import com.decard.zj.founctiontest.serialport.RxBusInner
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers

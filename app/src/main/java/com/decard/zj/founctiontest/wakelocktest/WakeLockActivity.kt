@@ -1,7 +1,7 @@
 package com.decard.zj.founctiontest.wakelocktest
 
 import android.content.Context
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PowerManager
 import com.decard.zj.founctiontest.R

@@ -1,7 +1,6 @@
 package com.example.commonlibs.utils;
 
 
-import com.example.commonlibs.network.DataBean;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
@@ -19,7 +18,7 @@ public class JsonUtils {
             return false;
         }
         try {
-            new Gson().fromJson(json, DataBean.class);
+//            new Gson().fromJson(json, DataBean.class);
             return true;
         } catch (JsonParseException e) {
             return false;

@@ -1,7 +1,7 @@
 package com.decard.zj.founctiontest.net
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.decard.zj.founctiontest.R
 import com.example.commonlibs.net.NetChangeListener
 import com.example.commonlibs.net.NetType

@@ -1,5 +1,7 @@
 package com.decard.zj.founctiontest.network
 
+import com.decard.zj.founctiontest.a7s.RequestBean
+import com.decard.zj.founctiontest.a7s.ResultBean
 import io.reactivex.Observable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -34,5 +36,7 @@ interface RetrofitService {
     @POST("dc/intelligent")
     fun getDc(@Part("param") param: String): Observable<String>
 
+    @POST("cposp/pay/signIn")
+    fun testA7S(@Body requestBean: RequestBean): Observable<ResultBean>
 
 }

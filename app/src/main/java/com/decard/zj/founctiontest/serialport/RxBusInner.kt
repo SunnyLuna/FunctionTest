@@ -1,13 +1,9 @@
-package com.decard.zj.kotlinbaseapplication.utils
+package com.decard.zj.founctiontest.serialport
 
 import com.jakewharton.rxrelay2.PublishRelay
 import com.jakewharton.rxrelay2.Relay
 import io.reactivex.Observable
-import io.reactivex.ObservableEmitter
-import io.reactivex.ObservableOnSubscribe
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.subjects.PublishSubject
-import io.reactivex.subjects.Subject
 
 /**
  * File Description

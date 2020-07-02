@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/calendarlibs" />
             <option value="$PROJECT_DIR$/commonlibs" />
+            <option value="$PROJECT_DIR$/signaturelibs" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

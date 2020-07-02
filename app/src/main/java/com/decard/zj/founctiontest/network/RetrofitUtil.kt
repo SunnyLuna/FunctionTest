@@ -1,10 +1,12 @@
 package com.decard.zj.founctiontest.network
 
+import com.decard.zj.founctiontest.network.base.StringConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+
 
 /**
  * File Description
@@ -23,6 +25,8 @@ object RetrofitUtil {
         builder.readTimeout(10, TimeUnit.SECONDS)
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .retryOnConnectionFailure(true)
+                .sslSocketFactory(TrustAllCerts.createSSLSocketFactory())
+                .hostnameVerifier(TrustAllCerts.TrustAllHostnameVerifier())
         return Retrofit.Builder()
                 .baseUrl(url)
                 .client(builder.build())
@@ -67,6 +71,10 @@ object RetrofitUtil {
         return getStringService("http://15.72.10.69:8090/", RetrofitService::class.java)
     }
 
+    fun getA7S(): RetrofitService {
+        return getService("https://wxtest2.ahrcu.com:3443/", RetrofitService::class.java)
+    }
+
     private fun createTest(url: String): Retrofit {
         val builder = OkHttpClient().newBuilder()
         builder.readTimeout(10, TimeUnit.SECONDS)
@@ -92,4 +100,6 @@ object RetrofitUtil {
     fun getdc(): RetrofitService {
         return getTestService("http://127.0.0.1:8080/", RetrofitService::class.java)
     }
+
+
 }

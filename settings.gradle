@@ -1,2 +1,3 @@
+include ':signaturelibs'
 include ':app', ':commonlibs'
 include ':calendarlibs'

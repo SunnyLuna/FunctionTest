@@ -3,9 +3,9 @@ package com.decard.zj.founctiontest.download
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.SimpleItemAnimator
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.SimpleItemAnimator
 import android.util.Log
 import com.decard.appstore.net.responsebean.InitResponse
 import com.decard.zj.founctiontest.R
@@ -52,10 +52,10 @@ class DownloadActivity : AppCompatActivity() {
     val adapter = MainAdapter()
     private fun initView() {
 //        val layoutManager = GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false)
-        val layoutManager = LinearLayoutManager(this)
+        val layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         main_list!!.layoutManager = layoutManager
         main_list!!.adapter = adapter
-        (main_list!!.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+        (main_list!!.itemAnimator as androidx.recyclerview.widget.SimpleItemAnimator).supportsChangeAnimations = false
     }
 
     private fun initData() {

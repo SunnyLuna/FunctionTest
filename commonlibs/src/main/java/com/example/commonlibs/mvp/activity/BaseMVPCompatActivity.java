@@ -1,7 +1,7 @@
 package com.example.commonlibs.mvp.activity;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.example.commonlibs.mvp.BasePresenter;

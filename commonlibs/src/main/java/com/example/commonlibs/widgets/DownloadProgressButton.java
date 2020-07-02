@@ -23,7 +23,7 @@ import com.example.commonlibs.R;
  * created at 2019/8/12 19:16
  */
 
-public class DownloadProgressButton extends android.support.v7.widget.AppCompatButton {
+public class DownloadProgressButton extends androidx.appcompat.widget.AppCompatButton {
 
     public static final int MODE_BUTTON = 0;
 

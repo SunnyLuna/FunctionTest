@@ -23,7 +23,7 @@ import com.decard.zj.founctiontest.R;
  * @Description:
  */
 
-public class DownloadProgressButton extends android.support.v7.widget.AppCompatButton {
+public class DownloadProgressButton extends androidx.appcompat.widget.AppCompatButton {
 
     public static final int MODE_BUTTON = 0;
 

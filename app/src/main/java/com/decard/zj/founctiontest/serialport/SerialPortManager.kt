@@ -3,7 +3,6 @@ package com.decard.zj.founctiontest.serialport
 import android.os.HandlerThread
 import android.serialport.SerialPort
 import io.reactivex.Observable
-import io.reactivex.ObservableOnSubscribe
 import io.reactivex.schedulers.Schedulers
 import java.io.File
 import java.io.OutputStream

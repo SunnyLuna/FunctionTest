@@ -15,6 +15,7 @@ open class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         instance = this
         activityList = ArrayList()
     }

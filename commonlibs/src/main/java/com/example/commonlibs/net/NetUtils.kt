@@ -20,14 +20,11 @@ object NetUtils {
     @JvmStatic
     fun isNetworkAvailable(): Boolean {
 
-        val connectivity = BaseApplication.instance.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val infos = connectivity.allNetworkInfo
-        if (infos != null) {
-            for (info in infos) {
-                if (info.state == NetworkInfo.State.CONNECTED) {
-                    return true
-                }
-            }
+        val connectivityManager =
+                BaseApplication.instance.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetworkInfo
+        if (activeNetworkInfo != null) {
+            return true
         }
         return false
     }

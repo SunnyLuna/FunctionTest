@@ -18,7 +18,6 @@ object BitmapUtils {
         return BitmapFactory.decodeFile(file.absolutePath)
     }
 
-
     /**
      * 位图合成
      */
@@ -72,7 +71,7 @@ object BitmapUtils {
         }
     }
 
-    /*
+    /**
      *将string字符串转为bytes
      */
     @JvmStatic
@@ -83,7 +82,7 @@ object BitmapUtils {
         return baos.toByteArray()
     }
 
-    /*
+    /**
      *将bitmap转为bytes
      */
     @JvmStatic

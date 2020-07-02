@@ -6,7 +6,7 @@ import android.animation.PropertyValuesHolder
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Environment
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.decard.zj.founctiontest.R
 import com.example.commonlibs.camera.CameraFactory
 import com.example.commonlibs.camera.CameraUtils
